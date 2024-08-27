@@ -1,0 +1,9 @@
+# Microsoft Primary Domain Controller
+[Domain-Controllers]
+PDC ansible_host=192.168.255.50
+BDC ansible_host=192.168.255.51
+
+# Microsoft Horizon Server
+[HOR1]
+HOR1 ansible_host=192.168.255.60
+HOR2 ansible_host=192.168.255.61
