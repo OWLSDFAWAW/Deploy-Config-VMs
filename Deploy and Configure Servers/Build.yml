@@ -11,12 +11,14 @@
 - hosts: Secondary_Domain
   gather_facts: False
   roles:
-   - deploy_core
+   - deploy_winsrv_core
    - sdc
    - common
 
-# Domain join and install Horizon
-#- hosts: hor1
-#  roles:
-#   - hor1
-#   - common
+# Domain join and install Horizon Connection Server
+- hosts: hcr1
+  gather_facts: False
+  roles:
+   - deploy_winsrv_gui
+   - hor1
+   - common

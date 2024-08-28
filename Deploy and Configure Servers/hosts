@@ -13,7 +13,6 @@ SDC ansible_host="192.168.158.11"
 #
 [Horizon-Connection-Servers]
 HCS1 ansible_host=192.168.255.60
-HCS2 ansible_host=192.168.255.61
 #
 # Windows File Server
 #
