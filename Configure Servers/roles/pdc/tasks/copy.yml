@@ -1,0 +1,8 @@
+---
+#
+# Copy ActiveDirectoryDsc PowerShell module to server
+#
+- name: Copy ActiveDirectoryDsc
+  ansible.windows.win_copy:
+    src: \\fileserver\ActiveDirectoryDsc
+    dest: C:\Program Files\WindowsPowershell\Modules

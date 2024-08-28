@@ -1,0 +1,81 @@
+---
+#
+# Creation of Active Directory 
+#
+# ************* Need to add code to manually install from local repo *****************
+#
+- name: Install XactiveDirectory package for OU creation
+  win_psmodule:
+    name: ActiveDirectoryDSC
+    state: present
+    acceptlicense: true
+#
+# Create OU for Standard Users
+#
+- name: Create OU for Staff
+  win_dsc:
+    resource_name: ADOrganizationalUnit
+    name: "Staff"
+    path: "dc={{ netbios_domain }}, dc={{ middle_level_domain }}, dc={{ end_level_domain }}"
+    Description: "Staff OU"
+    Ensure: present
+#
+# Create OU for Adminstration Users
+#
+- name: Create OU for Admin
+  win_dsc:
+    resource_name: ADOrganizationalUnit
+    name: "Admins"
+    path: "dc={{ netbios_domain }}, dc={{ middle_level_domain }}, dc={{ end_level_domain }}"
+    Description: "Administrator OU"
+    Ensure: present
+#
+# Create OU for Service Accounts
+#
+- name: Create OU for Service Accounts
+  win_dsc:
+    resource_name: ADOrganizationalUnit
+    name: "Service Accounts"
+    path: "dc={{ netbios_domain }}, dc={{ middle_level_domain }}, dc={{ end_level_domain }}"
+    Description: "Service Accounts OU"
+    Ensure: present
+#
+# Create OU for Servers
+#
+- name: Create OU for Servers
+  win_dsc:
+    resource_name: ADOrganizationalUnit
+    name: "Servers"
+    path: "dc={{ netbios_domain }}, dc={{ middle_level_domain }}, dc={{ end_level_domain }}"
+    Description: "Servers OU"
+    Ensure: present
+#
+# Create OU for Exchange Servers
+#
+- name: Create OU for Exchange Servers
+  win_dsc:
+    resource_name: ADOrganizationalUnit
+    name: "Exchange"
+    path: "ou={{ Member_Servers }}, dc={{ netbios_domain }}, dc={{ middle_level_domain }}, dc={{ end_level_domain }}"
+    Description: "Exchange Servers OU"
+    Ensure: present
+#
+# Create OU for SharePoint Servers
+#
+- name: Create OU for Sharepoint Servers
+  win_dsc:
+    resource_name: ADOrganizationalUnit
+    name: "Sharepoint"
+    path: "ou={{ Member_Servers }}, dc={{ netbios_domain }}, dc={{ middle_level_domain }}, dc={{ end_level_domain }}"
+    Description: "SharePoint OU"
+    Ensure: present
+#
+# Create OU for SQL Servers
+#
+- name: Create OU for SQL Servers
+  win_dsc:
+    resource_name: ADOrganizationalUnit
+    name: "SQL"
+    path: "ou={{ Member_Servers }}, dc={{ netbios_domain }}, dc={{ middle_level_domain }}, dc={{ end_level_domain }}"
+    Description: "Microsoft SQL Servers OU"
+    Ensure: present

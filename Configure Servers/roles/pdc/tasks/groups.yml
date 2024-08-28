@@ -1,0 +1,12 @@
+---
+# Domain Group Creation
+#
+# Should these be Domain Local or Domain Global Groups?
+#
+# Create Employees Group
+#
+- name: Create Employees Group
+  ansible.windows.win_group:
+    name: Employees
+    description: Employee Group
+    state: present

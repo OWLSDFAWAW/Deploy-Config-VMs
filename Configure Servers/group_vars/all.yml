@@ -1,4 +1,6 @@
 ---
+# Variables listed here are applicable to all host groups
+
 # Ansible connection settings
 ansible_user: administrator
 ansible_password: "Pa55word"
@@ -6,7 +8,18 @@ ansible_port: 5985
 ansible_connection: winrm
 ansible_winrm_server_cert_validation: ignore
 
-# Domain Settings
+# vCenter connection settings
+vcenter_hostname: "192.168.255.20"
+vcenter_username: "administrator@vsphere.local"
+vcenter_password: "Password1234!"
+datacenter_name: "Datacenter"
+cluster_name: "Cluster"
+folder: "Production-Servers"
+template_name: "Win2022_Core"
+virtual_machine_datastore: datastore01
+#
+# Define Domain Settings
+#
 domain: "test.co.uk"
 netbios_domain: "test"
 middle_level_domain: "co"
@@ -19,14 +32,14 @@ domain_safemode_password: "Pa55word"
 # Computer names
 primary_domain_controller: "testdc001"
 secondary_domain_controller: "testdc002"
-horizon_server1: "testcas001"
-horizon_server2: "testcas002"
+horizon_connection_server1: "testcas001"
+horizon_connection_server2: "testcas002"
 
 # FQDN Settings
 fqdn_primary_domain_controller: "{{ primary_domain_controller }}.{{ domain }}"
 fqdn_secondary_domain_controller: "{{ secondary_domain_controller }}.{{ domain }}"
-fqdn_horizon_server1: "{{ horizon_server1 }}.{{ domain }}"
-fqdn_horizon_server2: "{{ horizon_server2 }}.{{ domain }}"
+fqdn_horizon_connection_server1: "{{ horizon_connection_server1 }}.{{ domain }}"
+fqdn_horizon_connection_server2: "{{ horizon_connection_server2 }}.{{ domain }}"
 
 # AD OU Settings
 Service_Accounts: "Service Accounts"

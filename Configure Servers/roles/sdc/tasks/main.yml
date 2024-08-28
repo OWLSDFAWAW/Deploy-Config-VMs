@@ -1,0 +1,9 @@
+---
+#
+# Initiate and formate data disks
+#
+- include_tasks: initiate_disks.yml
+#
+# Joing server to the domain
+#
+- include_tasks: domain_join.yml

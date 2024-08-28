@@ -1,9 +1,26 @@
+#
 # Microsoft Primary Domain Controller
-[Domain-Controllers]
-PDC ansible_host=192.168.255.50
-BDC ansible_host=192.168.255.51
-
+#
+[Primary_Domain]
+PDC ansible_host="192.168.158.10"
+#
+# Microsoft Secondary Domain Controller
+#
+[Secondary_Domain]
+SDC ansible_host="192.168.158.11"
+#
 # Microsoft Horizon Server
-[HOR1]
-HOR1 ansible_host=192.168.255.60
-HOR2 ansible_host=192.168.255.61
+#
+[Horizon-Connection-Servers]
+HCS1 ansible_host=192.168.255.60
+HCS2 ansible_host=192.168.255.61
+#
+# Windows File Server
+#
+[File Server]
+FIL ansible_host="192.168.158.50"
+#
+# Windows Update Server
+#
+[WSUS Server]
+WSUS ansible_host="192.168.158.52"

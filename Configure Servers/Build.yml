@@ -1,0 +1,22 @@
+---
+# Configure the primary domain controller
+- hosts: Primary_Domain
+  gather_facts: False
+  roles:
+   - deploy_core
+   - pdc
+   - common
+
+# Configure the secondary domain controller
+- hosts: Secondary_Domain
+  gather_facts: False
+  roles:
+   - deploy_core
+   - sdc
+   - common
+
+# Domain join and install Horizon
+#- hosts: hor1
+#  roles:
+#   - hor1
+#   - common
