@@ -8,7 +8,7 @@
     datacenter: "{{ datacenter_name }}"
     state: poweredon
     folder:  /{{ datacenter_name }}/vm/{{ folder }}
-    template: "{{ template_name }}"
+    template: "{{ template_gui }}"
     name: "{{ vm_name }}"
     cluster: "{{ cluster_name }}"
     datastore: "{{ virtual_machine_datastore }}"

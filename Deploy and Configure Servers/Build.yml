@@ -3,7 +3,7 @@
 - hosts: Primary_Domain
   gather_facts: False
   roles:
-   - deploy_core
+   - deploy_winsrv_core
    - pdc
    - common
 

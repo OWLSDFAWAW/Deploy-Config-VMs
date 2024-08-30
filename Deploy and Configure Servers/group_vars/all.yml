@@ -3,7 +3,7 @@
 
 # Ansible connection settings
 ansible_user: administrator
-ansible_password: "Pa55word"
+ansible_password: "Password1234!"
 ansible_port: 5985
 ansible_connection: winrm
 ansible_winrm_server_cert_validation: ignore
@@ -15,8 +15,9 @@ vcenter_password: "Password1234!"
 datacenter_name: "Datacenter"
 cluster_name: "Cluster"
 folder: "Production-Servers"
-template_name: "Win2022_Core"
-virtual_machine_datastore: datastore01
+template_core: "Win2022_Core"
+template_gui: "Win2022_Gui"
+virtual_machine_datastore: "Datastore"
 #
 # Define Domain Settings
 #
@@ -26,8 +27,8 @@ middle_level_domain: "co"
 end_level_domain: "uk"
 domain_admin: "{{ ansible_user }}@{{ domain }}"
 domain_admin_username: "{{ ansible_user }}"
-domain_admin_password: "Pa55word"
-domain_safemode_password: "Pa55word"
+domain_admin_password: "Password1234!"
+domain_safemode_password: "Password1234!"
 
 # Computer names
 primary_domain_controller: "testdc001"
