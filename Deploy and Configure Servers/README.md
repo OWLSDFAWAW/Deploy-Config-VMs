@@ -15,6 +15,9 @@ Linux machine with the following
         sudo add-apt-repository --yes --update ppa:ansible/ansible
         sudo apt install ansible
 
+    Python Access to vSphere APIs     
+        sudo apt install python3-pyvmomi
+
     Git
         sudo apt-get install git
 

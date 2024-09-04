@@ -1,25 +1,22 @@
 ---
-# Variables listed here are applicable to specific hosts
-
+# Variables listed here are applicable to the specific hosts
+#
+# Define Server name
+#
 primary_domain_controller: "testdc001"
-vm_name: "primary_domain_controller"
-
-# Hardware configuration
+hostname: "primary_domain_controller"
+#
+# Define Hardware configuration
+#
 CPU: 4     # 4 Core
+socket: 2 
 RAM: 4096  # 4 GB
-
-
-# networks settings
-
-# vLan 105
-vLan_105_ID: 1105
-IP_105: 10.10.105.43
-netmask_105: 255.255.255.0
-gateway_105: 10.10.105.254
-DNS1: 10.200.100.201
-DNS2: 10.200.100.199
-
-# vLan 104
-vLan_104_ID: 1104
-IP_104: 10.10.104.137
-netmask_104: 255.255.255.0
+#
+# Defien Networks settings
+#
+#vLan_ID: 10
+IP4: 192.168.255.100
+netmask: 255.255.255.0
+gateway: 192.168.255.2
+DNS1: 192.168.255.40
+DNS2: 192.168.255.2
