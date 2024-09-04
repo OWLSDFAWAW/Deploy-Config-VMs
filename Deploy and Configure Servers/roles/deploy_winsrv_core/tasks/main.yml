@@ -17,13 +17,6 @@
       num_cpus: "{{ CPU }}"
       num_cpu_cores_per_socket: "{{ sockets }}"
       scsi: paravirtual
-#      memory_reservation_lock: true
-#      mem_limit: 8096
-#      mem_reservation: 4096
-#      cpu_shares_level: "high"
-#      mem_shares_level: "high"
-#      cpu_limit: 8096
-#      cpu_reservation: 4096
       max_connections: 5
       hotadd_cpu: true
       hotremove_cpu: true
@@ -49,4 +42,11 @@
   register: deploy
 
 
-  #        vlan: "{{ vLan_ID }}"
+#      vlan: "{{ vLan_ID }}"
+#      memory_reservation_lock: true
+#      mem_limit: 8096
+#      mem_reservation: 4096
+#      cpu_shares_level: "high"
+#      mem_shares_level: "high"
+#      cpu_limit: 8096
+#      cpu_reservation: 4096
