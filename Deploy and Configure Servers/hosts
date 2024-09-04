@@ -2,7 +2,7 @@
 # Microsoft Primary Domain Controller
 #
 [Primary_Domain]
-PDC ansible_host="192.168.255.50"
+pdc ansible_host="192.168.255.50"
 #
 # Microsoft Secondary Domain Controller
 #
