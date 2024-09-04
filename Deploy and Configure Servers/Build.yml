@@ -1,6 +1,6 @@
 ---
 # Configure the primary domain controller
-- hosts: Primary_Domain
+- hosts: pdc
   gather_facts: False
   roles:
    - deploy_winsrv_core
