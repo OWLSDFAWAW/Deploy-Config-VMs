@@ -8,17 +8,17 @@
    - common
 
 # Configure the secondary domain controller
-- hosts: Secondary_Domain
-  gather_facts: False
-  roles:
-   - deploy_winsrv_core
-   - sdc
-   - common
+#- hosts: Secondary_Domain
+#  gather_facts: False
+#  roles:
+#   - deploy_winsrv_core
+#   - sdc
+#   - common
 
 # Domain join and install Horizon Connection Server
-- hosts: hcr1
-  gather_facts: False
-  roles:
-   - deploy_winsrv_gui
-   - hor1
-   - common
+#- hosts: hcr1
+#  gather_facts: False
+#  roles:
+#   - deploy_winsrv_gui
+#   - hor1
+#   - common
