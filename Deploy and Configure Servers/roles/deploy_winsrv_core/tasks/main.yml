@@ -32,7 +32,8 @@
       boot_firmware: "efi"
     networks:
     - name: VM Network
-        ip: "{{ IP4 }}"
+        ip: 
+        - "{{ IP4 }}"
         netmask: "{{ netmask }}"
         gateway: "{{ gateway }}"
         type: static
@@ -41,6 +42,8 @@
       dns_servers:
       - "{{ DNS1 }}"
       - "{{ DNS2 }}"
+      dns_suffix:
+        - "{{ domain }}"
     wait_for_ip_address: true
   delegate_to: localhost
   register: deploy
