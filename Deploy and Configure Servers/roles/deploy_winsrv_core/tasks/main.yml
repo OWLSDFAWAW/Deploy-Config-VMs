@@ -32,7 +32,6 @@
       boot_firmware: "efi"
     networks:
     - name: VM Network
-#        vlan: "{{ vLan_ID }}"
         ip: "{{ IP4 }}"
         netmask: "{{ netmask }}"
         gateway: "{{ gateway }}"
@@ -45,3 +44,6 @@
     wait_for_ip_address: true
   delegate_to: localhost
   register: deploy
+
+
+  #        vlan: "{{ vLan_ID }}"
