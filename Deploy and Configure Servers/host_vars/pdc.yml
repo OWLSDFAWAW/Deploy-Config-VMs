@@ -1,6 +1,7 @@
 ---
 # Variables listed here are applicable to specific hosts
 
+primary_domain_controller: "testdc001"
 vm_name: "primary_domain_controller"
 
 # Hardware configuration

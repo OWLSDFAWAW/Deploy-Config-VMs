@@ -31,7 +31,7 @@ domain_admin_password: "Password1234!"
 domain_safemode_password: "Password1234!"
 #
 # Computer names
-primary_domain_controller: "testdc001"
+# primary_domain_controller: "testdc001"
 secondary_domain_controller: "testdc002"
 horizon_connection_server1: "testcas001"
 horizon_connection_server2: "testcas002"
