@@ -4,7 +4,7 @@
     hostname: "{{ vcenter_hostname }}"
     username: "{{ vcenter_username }}"
     password: "{{ vcenter_password }}"
-    folder: "{{ vcneter_folder }}"
+    folder: "{{ vcenter_folder }}"
     name: "{{ hostname }}"
     state: poweredon
     template: "{{ template_core }}"
