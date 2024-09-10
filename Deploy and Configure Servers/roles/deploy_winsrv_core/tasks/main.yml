@@ -24,7 +24,7 @@
       version: 12 # Hardware version of virtual machine
       boot_firmware: "efi"
     networks:
-    - name: VM Network
+      - name: VM Network
         ip: "{{ IP4 }}"
         netmask: "{{ netmask }}"
         gateway: "{{ gateway }}"
