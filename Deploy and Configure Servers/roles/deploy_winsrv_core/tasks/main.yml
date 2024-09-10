@@ -25,8 +25,7 @@
       boot_firmware: "efi"
     networks:
     - name: VM Network
-        ip:
-        - "{{ IP4 }}"
+        ip: "{{ IP4 }}"
         netmask: "{{ netmask }}"
         gateway: "{{ gateway }}"
         type: static
