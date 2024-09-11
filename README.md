@@ -9,6 +9,7 @@ Setup the four Windows Servers (Primary Domain Controller, Replica Domain Contro
 Prerequisites
 
 Linux machine with the following
+
     Ansible
         sudo apt update
         sudo apt install software-properties-common
