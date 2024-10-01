@@ -1,6 +1,7 @@
 
 - name: Create a virtual machine from a template
   community.vmware.vmware_guest:
+    validate_certs: '{{ validate_certs | default(no) }}'
     hostname: "{{ vcenter_hostname }}"
     username: "{{ vcenter_username }}"
     password: "{{ vcenter_password }}"
