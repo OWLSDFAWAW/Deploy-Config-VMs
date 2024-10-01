@@ -18,6 +18,7 @@ vcenter_folder: "Servers"
 template_core: "Win2022_Core"
 template_gui: "Win2022_Gui"
 virtual_machine_datastore: "Datastore"
+validate_cert: "false"
 #
 # Define Domain Settings
 #
