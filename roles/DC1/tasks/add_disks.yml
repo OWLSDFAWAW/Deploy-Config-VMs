@@ -1,0 +1,21 @@
+---
+- name: Add additional disks to newly created guest VM
+  community.vmware.vmware_guest:
+    validate_certs: false
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    folder: "{{ vcenter_folder }}"
+    datacenter: "{{ datacenter_name }}"
+    name: "{{ hostname }}"
+    disk:
+      - size_gb: 100
+        type: thin
+        datastore: "{{ virtual_machine_datastore }}"
+      - size_gb: 200
+        type: thin
+        datastore: "{{ virtual_machine_datastore }}"
+      - size_gb: 300
+        type: thin
+        datastore: "{{ virtual_machine_datastore }}"
+  delegate_to: localhost

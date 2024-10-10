@@ -1,10 +1,9 @@
 ---
 # Configure the primary domain controller
-- hosts: Primary_Domain
+- hosts: DC1
   gather_facts: False
   roles:
-   - deploy_winsrv_core
-   - pdc
+   - DC1
    - common
 
 # Configure the secondary domain controller

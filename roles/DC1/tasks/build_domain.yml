@@ -4,7 +4,7 @@
 #
 - name: Change the hostname
   ansible.windows.win_hostname:
-    name: "{{ primary_domain_controller }}"
+    name: "{{ DC1 }}"
   register: res
 
 - name: Reboot
