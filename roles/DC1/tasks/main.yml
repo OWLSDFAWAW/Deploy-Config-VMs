@@ -1,9 +1,5 @@
 ---
 #
-# Build new VM from Template
-#
-- include_tasks: Deploy_vm.yml
-#
 # Initiate data disks
 #
 - include_tasks: initiate_disks.yml

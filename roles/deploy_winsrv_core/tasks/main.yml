@@ -1,28 +1,27 @@
-
+---
+#
+#
+#
 - name: Create a virtual machine from a template
   community.vmware.vmware_guest:
     validate_certs: false
+    annotation: "{{ VM_notes }}"
     hostname: "{{ vcenter_hostname }}"
     username: "{{ vcenter_username }}"
     password: "{{ vcenter_password }}"
     folder: "{{ vcenter_folder }}"
+    datacenter: "{{ datacenter_name }}"
     name: "{{ hostname }}"
     state: poweredon
     template: "{{ template_core }}"
-    disk:
-    - size_gb: 10
-      type: thin
-      datastore: "{{ virtual_machine_datastore }}"
     hardware:
       memory_mb: "{{ RAM }}"
       num_cpus: "{{ CPU }}"
-      num_cpu_cores_per_socket: "{{ sockets }}"
-      scsi: paravirtual
-      max_connections: 5
+      max_connections: 1
       hotadd_cpu: true
       hotremove_cpu: true
       hotadd_memory: false
-      version: 12 # Hardware version of virtual machine
+      version: latest
       boot_firmware: "efi"
     networks:
       - name: VM Network
@@ -31,7 +30,9 @@
         gateway: "{{ gateway }}"
         type: static
     customization:
-      existing_vm: True
+      existing_vm: true
+      hwclockUTC: true
+      orgname: " Company name"
       dns_servers:
       - "{{ DNS1 }}"
       - "{{ DNS2 }}"
@@ -40,13 +41,3 @@
     wait_for_ip_address: true
   delegate_to: localhost
   register: deploy
-
-
-#      vlan: "{{ vLan_ID }}"
-#      memory_reservation_lock: true
-#      mem_limit: 8096
-#      mem_reservation: 4096
-#      cpu_shares_level: "high"
-#      mem_shares_level: "high"
-#      cpu_limit: 8096
-#      cpu_reservation: 4096

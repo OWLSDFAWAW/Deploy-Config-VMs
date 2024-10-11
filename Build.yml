@@ -3,6 +3,7 @@
 - hosts: DC1
   gather_facts: False
   roles:
+   - deploy_winsrv_core
    - DC1
    - common
 
