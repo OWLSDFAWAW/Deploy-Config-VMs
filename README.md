@@ -37,3 +37,10 @@ sudo apt update sudo apt-get install apt-mirror
 
 Edit configuration file
 sudo vi /etc/apt/mirror.list uncomment out "set base_path" change deb line to deb-amd64 http://gb.archive.ubuntu.com/ubuntu jammy main universe comment out all other deb lines save and exit sudo apt-mirror
+
+
+Create Vault file 
+ansible-vault edit <file name>
+
+Create a symbolic link
+ln -s <path or source> <path of target>
