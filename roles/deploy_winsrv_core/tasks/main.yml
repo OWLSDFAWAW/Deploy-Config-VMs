@@ -1,7 +1,4 @@
 ---
-#
-#
-#
 - name: Create a virtual machine from a template
   community.vmware.vmware_guest:
     validate_certs: false
