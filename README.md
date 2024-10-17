@@ -21,7 +21,7 @@ Linux machine with the following
 3. log out and back in to see venv build
 
 
-
+ls 
 ```bash
 
 # install dependencies for ubuntu
@@ -51,7 +51,7 @@ Don't do these steps
         sudo apt-get install git
 
 
-Create encrypted variables within playbook run the commad below and past results into variable files
+Create encrypted variables within playbook run the commad belpythonow and past results into variable files
 replace id with variable name eg vsphere, replace password, replace variable with name ef vsphere_password
 when prompted enter the same vault password for all entries in the playbook
 copy the output and save in the group_vars/all.yml & host_vars/*

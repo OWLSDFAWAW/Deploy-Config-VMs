@@ -40,3 +40,5 @@
     wait_for_ip_address: true
   delegate_to: localhost
   register: deploy
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
