@@ -33,7 +33,7 @@
       existing_vm: true
       hwclockUTC: true
       timezone: 085
-      orgname: " Company name"
+      orgname: "Company name"
       password: "{{ vault_local_admin_pass }}"
       dns_servers:
       - "{{ DNS1 }}"

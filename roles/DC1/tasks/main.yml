@@ -1,5 +1,9 @@
 ---
 #
+#
+#
+- include_tasks: add_disks.yml
+#
 # Initiate data disks
 #
 - include_tasks: initiate_disks.yml

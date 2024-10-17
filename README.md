@@ -16,6 +16,34 @@ Linux machine with the following
         sudo add-apt-repository --yes --update ppa:ansible/ansible
         sudo apt install ansible
 
+1. install below OS dependencies
+2. copy resources
+3. log out and back in to see venv build
+
+
+
+```bash
+
+# install dependencies for ubuntu
+export DEBIAN_FRONTEND=noninteractive && sudo apt update && sudo apt -y upgrade \
+  && sudo apt install -y sudo iputils-ping vim nano cifs-utils \
+  && sudo apt install -y lsof socat rsync gnupg ntpdate show-motd \
+  && sudo apt install -y git openssh-server python3.12-venv \
+  && sudo apt install -y krb5-user sssd-krb5 gcc libkrb5-dev python3-dev
+
+
+# copy resources 
+sudo mkdir -p /resources/ansible-environment && sudo mkdir -p /etc/ansible/collections
+
+sudo cp -r ./* /resources/ansible-environment/
+sudo cp ./ansible.cfg /etc/ansible/
+sudo cp ./python-ansible-venv.sh /etc/profile.d/
+
+sudo chown -R $USER:root /resources && chown -R $USER:root /etc/ansible
+
+
+
+Don't do these steps
     Python Access to vSphere APIs     
         sudo apt install python3-pyvmomi
 
