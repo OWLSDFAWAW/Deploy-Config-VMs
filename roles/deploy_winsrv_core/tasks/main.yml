@@ -41,4 +41,4 @@
   delegate_to: localhost
   register: deploy
   vars:
-    ansible_python_interpreter: /usr/bin/python3
+    ansible_python_interpreter: /usr/bin/python3.10
