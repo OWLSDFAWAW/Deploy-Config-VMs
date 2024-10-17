@@ -9,7 +9,7 @@ ansible_connection: winrm
 ansible_winrm_server_cert_validation: ignore
 #
 # vCenter connection settings
-vcenter_hostname: "192.168.255.20"
+vcenter_hostname: "192.168.255.12"
 vcenter_username: "administrator@vsphere.local"
 vcenter_password: "Password1234!"
 datacenter_name: "Datacenter"

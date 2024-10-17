@@ -5,7 +5,6 @@
   roles:
    - deploy_winsrv_core
    - DC1
-   - common
 
 # Configure the secondary domain controller
 #- hosts: Secondary_Domain
