@@ -7,12 +7,11 @@
    - DC1
 
 # Configure the secondary domain controller
-#- hosts: Secondary_Domain
-#  gather_facts: False
-#  roles:
-#   - deploy_winsrv_core
-#   - sdc
-#   - common
+- hosts: DC2
+  gather_facts: False
+  roles:
+   - deploy_winsrv_core
+   - DC2
 
 # Domain join and install Horizon Connection Server
 #- hosts: hcr1

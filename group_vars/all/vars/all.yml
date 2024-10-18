@@ -29,9 +29,9 @@ netbios_domain: test
 middle_level_domain: co
 end_level_domain: uk
 domain_admin: "{{ ansible_user }}@{{ domain }}"
-domain_admin_username: "{{ ansible_user }}"
-domain_admin_password: Password1234!
-domain_safemode_password: Password1234!
+#domain_admin_username: "{{ ansible_user }}"
+#domain_admin_password: Password1234!
+#domain_safemode_password: Password1234!
 #
 # Computer names
 #

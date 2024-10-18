@@ -1,28 +1,14 @@
 ---
-- name: Change the hostname
-  ansible.windows.win_hostname:
-    name: "{{ secondary_domain_controller }}"
-  register: res
-
-- name: Reboot
-  ansible.windows.win_reboot:
-  when: res.reboot_required
-  
-- name: change DNS server
-  when: not ansible_windows_domain_member
-  win_dns_client:
-    adapter_names: '*'
-    ipv4_addresses:
-      - '192.168.158.10'
-      
+     
 - name: join domain
-  win_domain_membership:
+  microsoft.ad.membership:
     dns_domain_name: "{{ domain }}"
-    hostname: "{{ secondary_domain_controller }}"
+    hostname: "{{ DC2 }}"
     domain_admin_user: "{{ domain_admin }}"
-    domain_admin_password: "{{ domain_admin_password }}"
+    domain_admin_password: Password1234!
     database_path: D:\NTDS
-    sysvol_path: E:\SYSVOL
+    log_path: D:\LOGS
+    sysvol_path: D:\SYSVOL
     state: domain
   register: domain_joined
 
@@ -38,8 +24,8 @@
   win_domain_controller:
     dns_domain_name: "{{ domain }}"
     domain_admin_user: "{{ domain_admin }}"
-    domain_admin_password: "{{ domain_admin_password }}"
-    safe_mode_password: "{{ domain_safemode_password }}"
+    domain_admin_password: Password1234!
+    safe_mode_password: 1234!Password
     state: domain_controller
   register: ad
 
