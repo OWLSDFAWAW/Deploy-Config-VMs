@@ -34,12 +34,12 @@ export DEBIAN_FRONTEND=noninteractive && sudo apt update && sudo apt -y upgrade 
 
 # copy resources 
 sudo mkdir -p /resources/ansible-environment && sudo mkdir -p /etc/ansible/collections
-
+cd resources
 sudo cp -r ./* /resources/ansible-environment/
 sudo cp ./ansible.cfg /etc/ansible/
 sudo cp ./python-ansible-venv.sh /etc/profile.d/
 
-sudo chown -R $USER:root /resources && chown -R $USER:root /etc/ansible
+sudo chown -R $USER:root /resources && sudo chown -R $USER:root /etc/ansible
 
 
 
