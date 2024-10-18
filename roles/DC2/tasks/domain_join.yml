@@ -1,5 +1,4 @@
----
-     
+---  
 - name: join domain
   microsoft.ad.membership:
     dns_domain_name: "{{ domain }}"
@@ -33,4 +32,6 @@
   win_reboot:
     msg: "Installing AD. Rebooting..."
     pre_reboot_delay: 15
+    reboot_timeout: 600
+    post_reboot_delay: 420
   when: ad.changed
