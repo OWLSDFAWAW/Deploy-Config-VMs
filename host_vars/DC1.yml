@@ -9,14 +9,13 @@ hostname: "primary_domain_controller"
 # Define Hardware configuration
 #
 CPU: 4     # 4 Core
-sockets: 2 
 RAM: 4096  # 4 GB
 #
 # Defien Networks settings
 #
 VM_notes: Primary Domain Controller
-IP4: 192.168.255.100
+IP4: 192.168.255.40
 netmask: 255.255.255.0
 gateway: 192.168.255.2
 DNS1: 192.168.255.40
-DNS2: 192.168.255.2
+DNS2: 192.168.225.11

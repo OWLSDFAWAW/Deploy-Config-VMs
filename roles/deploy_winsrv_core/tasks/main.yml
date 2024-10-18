@@ -1,5 +1,8 @@
 ---
-- name: Create a virtual machine from a template
+#
+# Create new virtual machine from Windows Core Template
+#
+- name: Create a virtual machine from a core template
   community.vmware.vmware_guest:
     validate_certs: false
     annotation: "{{ VM_notes }}"
@@ -41,4 +44,3 @@
   delegate_to: localhost
   register: deploy
   vars:
-    #ansible_python_interpreter: /usr/bin/python3.10

@@ -2,6 +2,7 @@
 # Variables listed here are applicable to all host groups
 #
 # Ansible connection settings
+#
 ansible_user: administrator
 ansible_password: "Password1234!"
 ansible_port: 5985
@@ -9,6 +10,7 @@ ansible_connection: winrm
 ansible_winrm_server_cert_validation: ignore
 #
 # vCenter connection settings
+#
 vcenter_hostname: "192.168.255.12"
 vcenter_username: "administrator@vsphere.local"
 vcenter_password: "Password1234!"
@@ -32,18 +34,21 @@ domain_admin_password: "Password1234!"
 domain_safemode_password: "Password1234!"
 #
 # Computer names
-# primary_domain_controller: "testdc001"
-secondary_domain_controller: "testdc002"
-horizon_connection_server1: "testcas001"
-horizon_connection_server2: "testcas002"
+#
+#primary_domain_controller: "testdc001"
+#secondary_domain_controller: "testdc002"
+#horizon_connection_server1: "testcas001"
+#horizon_connection_server2: "testcas002"
 #
 # FQDN Settings
-fqdn_primary_domain_controller: "{{ primary_domain_controller }}.{{ domain }}"
-fqdn_secondary_domain_controller: "{{ secondary_domain_controller }}.{{ domain }}"
-fqdn_horizon_connection_server1: "{{ horizon_connection_server1 }}.{{ domain }}"
-fqdn_horizon_connection_server2: "{{ horizon_connection_server2 }}.{{ domain }}"
+#
+#fqdn_primary_domain_controller: "{{ primary_domain_controller }}.{{ domain }}"
+#fqdn_secondary_domain_controller: "{{ secondary_domain_controller }}.{{ domain }}"
+#fqdn_horizon_connection_server1: "{{ horizon_connection_server1 }}.{{ domain }}"
+#fqdn_horizon_connection_server2: "{{ horizon_connection_server2 }}.{{ domain }}"
 #
 # AD OU Settings
+#
 Service_Accounts: "Service Accounts"
 Administrator: "Admins"
 Users: "Staff"
