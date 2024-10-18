@@ -4,7 +4,7 @@
 # Define Server name
 #
 primary_domain_controller: "testdc001"
-hostname: "primary_domain_controller"
+hostname: "{{ primary_domain_controller }}"
 #
 # Define Hardware configuration
 #
@@ -14,8 +14,8 @@ RAM: 4096  # 4 GB
 # Defien Networks settings
 #
 VM_notes: Primary Domain Controller
-IP4: 192.168.255.40
+IP4: 192.168.255.50
 netmask: 255.255.255.0
 gateway: 192.168.255.2
-DNS1: 192.168.255.40
+DNS1: 192.168.255.50
 DNS2: 192.168.225.11
