@@ -2,12 +2,8 @@
 # Microsoft Primary Domain Controller
 #
 [Domain_controllers]
-DC1 ansible_host="192.168.255.50"
-#
-# Microsoft Secondary Domain Controller
-#
-#[Secondary_Domain]
-#SDC ansible_host="192.168.255.51"
+DC1 ansible_host=192.168.255.50
+DC2 ansible_host=192.168.255.51
 #
 # Microsoft Horizon Server
 #
