@@ -23,7 +23,6 @@
     domain_admin_password: Password1234!
     safe_mode_password: 1234!Password
     database_path: D:\NTDS
-    log_path: D:\LOGS
     sysvol_path: D:\SYSVOL
     state: domain_controller
   register: ad
