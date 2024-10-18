@@ -14,7 +14,7 @@
 #
 # Copy files to local server
 #
-#- include_tasks: copy.yml
+- include_tasks: copy.yml
 #
 # Enable managed service accounts in Active Directory
 #
