@@ -12,26 +12,7 @@
       - size_gb: 100
         type: thin
         datastore: "{{ virtual_machine_datastore }}"
-      - size_gb: 200
+      - size_gb: 50
         type: thin
         datastore: "{{ virtual_machine_datastore }}"
-  
-  
-- name: Initialize disk 1
-  community.windows.win_initialize_disk:
-    disk_number: 1
-
-- name: Create a partition with drive letter D
-  community.windows.win_partition:
-    drive_letter: D
-    partition_size: -1
-    disk_number: 1
-
-- name: Full format the newly created partition as NTFS and label it
-  community.windows.win_format:
-    drive_letter: D
-    file_system: NTFS
-    new_label: Data1
-    full: True
-
   delegate_to: localhost

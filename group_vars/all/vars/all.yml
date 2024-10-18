@@ -4,34 +4,34 @@
 # Ansible connection settings
 #
 ansible_user: administrator
-ansible_password: "Password1234!"
+ansible_password: Password1234!
 ansible_port: 5985
 ansible_connection: winrm
 ansible_winrm_server_cert_validation: ignore
 #
 # vCenter connection settings
 #
-vcenter_hostname: "192.168.255.12"
-vcenter_username: "administrator@vsphere.local"
-vcenter_password: "Password1234!"
-datacenter_name: "Datacenter"
-cluster_name: "Cluster"
-vcenter_folder: "Servers"
-template_core: "Win2022_Core"
-template_gui: "Win2022_Gui"
-virtual_machine_datastore: "Datastore"
-validate_certs: "false"
+vcenter_hostname: 192.168.255.12
+vcenter_username: administrator@vsphere.local
+vcenter_password: Password1234!
+datacenter_name: Datacenter
+cluster_name: Cluster
+vcenter_folder: Servers
+template_core: Win2022_Core
+template_gui: Win2022_Gui
+virtual_machine_datastore: Datastore
+validate_certs: false
 #
 # Define Domain Settings
 #
-domain: "test.co.uk"
-netbios_domain: "test"
-middle_level_domain: "co"
-end_level_domain: "uk"
+domain: test.co.uk
+netbios_domain: test
+middle_level_domain: co
+end_level_domain: uk
 domain_admin: "{{ ansible_user }}@{{ domain }}"
 domain_admin_username: "{{ ansible_user }}"
-domain_admin_password: "Password1234!"
-domain_safemode_password: "Password1234!"
+domain_admin_password: Password1234!
+domain_safemode_password: Password1234!
 #
 # Computer names
 #
