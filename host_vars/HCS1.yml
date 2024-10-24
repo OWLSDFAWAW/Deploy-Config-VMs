@@ -13,7 +13,7 @@ RAM: 4096  # 4 GB
 #
 # Defien Networks settings
 #
-VM_notes: Secondary Domain Controller
+VM_notes: Horizon connection server
 IP4: 192.168.255.52
 netmask: 255.255.255.0
 gateway: 192.168.255.2
