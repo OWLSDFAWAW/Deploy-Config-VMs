@@ -22,8 +22,8 @@
     domain_admin_user: "{{ domain_admin }}"
     domain_admin_password: Password1234!
     safe_mode_password: 1234!Password
-    database_path: D:\NTDS
-    sysvol_path: D:\SYSVOL
+    database_path: E:\NTDS
+    sysvol_path: E:\SYSVOL
     state: domain_controller
   register: ad
 

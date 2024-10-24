@@ -11,3 +11,6 @@
 # Joing server to the domain
 #
 - include_tasks: domain_join.yml
+#
+# 
+#

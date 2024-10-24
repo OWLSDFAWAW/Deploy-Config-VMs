@@ -7,9 +7,9 @@
     dns_domain_name: "{{ domain }}"
     domain_netbios_name: "{{ netbios_domain }}"
     safe_mode_password: 1234!Password
-    database_path: D:\NTDS
-    log_path: D:\LOGS
-    sysvol_path: D:\SYSVOL
+    database_path: E:\NTDS
+    log_path: E:\LOGS
+    sysvol_path: E:\SYSVOL
   register: ad
 
 - name: reboot server

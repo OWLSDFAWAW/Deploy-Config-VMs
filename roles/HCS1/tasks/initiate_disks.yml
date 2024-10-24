@@ -3,15 +3,15 @@
   community.windows.win_initialize_disk:
     disk_number: 1
 
-- name: Create a partition with drive letter D
+- name: Create a partition with drive letter E
   community.windows.win_partition:
-    drive_letter: D
+    drive_letter: E
     partition_size: -1
     disk_number: 1
 
 - name: Full format the newly created partition as NTFS and label it
   community.windows.win_format:
-    drive_letter: D
+    drive_letter: E
     file_system: NTFS
     new_label: Data1
     full: True
