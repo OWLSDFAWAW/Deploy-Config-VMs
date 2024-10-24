@@ -4,7 +4,7 @@
     dns_domain_name: "{{ domain }}"
     hostname: "{{ HCS1 }}"
     domain_admin_user: "{{ domain_admin }}"
-    domain_admin_password: PAssword1234!
+    domain_admin_password: Password1234!
     state: domain
   register: domain_joined
 
