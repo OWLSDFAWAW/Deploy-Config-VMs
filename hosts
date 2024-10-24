@@ -9,14 +9,3 @@ DC2 ansible_host=192.168.255.51
 #
 [Horizon_Connection_Servers]
 HCS1 ansible_host=192.168.255.52
-#HCS2 ansible_host="192.168.255.53"
-#
-# Windows File Server
-#
-#[File Server]
-#FIL ansible_host="192.168.255.54"
-#
-# Windows Update Server
-#
-#[WSUS Server]
-#WSUS ansible_host="192.168.255.55"
