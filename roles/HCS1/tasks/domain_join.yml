@@ -1,5 +1,5 @@
 ---
-    - name: join domain
+- name: join domain
   microsoft.ad.membership:
     dns_domain_name: "{{ domain }}"
     hostname: "{{ HCS1 }}"
