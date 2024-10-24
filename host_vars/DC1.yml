@@ -3,7 +3,7 @@
 #
 # Define Server name
 #
-DC1: "testdc001"
+DC1: testdc001
 hostname: "{{ DC1 }}"
 #
 # Define Hardware configuration

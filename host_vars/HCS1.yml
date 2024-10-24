@@ -3,7 +3,7 @@
 #
 # Define Server name
 #
-HCS1: "testhcs001"
+HCS1: testhcs001
 hostname: "{{ HCS1 }}"
 #
 # Define Hardware configuration
