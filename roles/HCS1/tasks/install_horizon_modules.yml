@@ -1,0 +1,40 @@
+---
+# make sure the Horizon View Module is installed
+- name: install HorizonView
+  win_psmodule:
+    name: VMware.VimAutomation.HorizonView
+    state: present
+  register: install_result
+
+# when the module is newly installed, disable certificate checking
+- name: disable ssl certificate checking
+  win_shell: |
+    Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false
+  when: install_result is changed
+
+# create a location for the HV.Helper modules
+- name: create location for HV modules
+  win_file:
+    path: 'C:\Program Files\WindowsPowerShell\Modules\VMware.HV.Helper\'
+    state: directory
+
+# copy the HV.Helper files to the appropiate location
+- name: copy vc connection info to localhost
+  win_copy:
+    src: 'C:\install\{{ item }}'
+    dest: 'C:\Program Files\WindowsPowerShell\Modules\VMware.HV.Helper\'
+    force: no
+    remote_src: yes
+  loop:
+    - VMware.HV.Helper.psm1
+    - VMware.HV.Helper.psd1
+    - VMware.HV.Helper.format.ps1xml
+  register: hv_result
+
+# after installing HV.Helpers make sure modules are ready to use from custom module
+- name: one time run of commands based on hv_result
+  win_shell: |
+    Set-PowerCLIConfiguration -Scope User -ParticipateInCeip:$false -Confirm:$false
+    Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false
+    Get-Command -Module 'VMware.HV.Helper'
+  when: hv_result is changed
