@@ -14,7 +14,7 @@
    - DC2
 
 # Domain join and install Horizon Connection Server
-- hosts: hcr1
+- hosts: HCS1
   gather_facts: False
   roles:
    - deploy_winsrv_gui
