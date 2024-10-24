@@ -7,7 +7,7 @@ DC2 ansible_host=192.168.255.51
 #
 # Microsoft Horizon Server
 #
-#[Horizon-Connection-Servers]
+[Horizon-Connection-Servers]
 HCS1 ansible_host="192.168.255.52"
 #HCS2 ansible_host="192.168.255.53"
 #
