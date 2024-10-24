@@ -3,8 +3,8 @@
 #
 # Define Server name
 #
-DC1: "testdc001"
-hostname: "{{ DC1 }}"
+HCS1: "testhcs001"
+hostname: "{{ HCS1 }}"
 #
 # Define Hardware configuration
 #
@@ -13,8 +13,8 @@ RAM: 4096  # 4 GB
 #
 # Defien Networks settings
 #
-VM_notes: Primary Domain Controller
-IP4: 192.168.255.50
+VM_notes: Secondary Domain Controller
+IP4: 192.168.255.52
 netmask: 255.255.255.0
 gateway: 192.168.255.2
 DNS1: 192.168.255.50

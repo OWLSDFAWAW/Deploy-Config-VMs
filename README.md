@@ -43,14 +43,6 @@ sudo chown -R $USER:root /resources && sudo chown -R $USER:root /etc/ansible
 
 
 
-Don't do these steps
-    Python Access to vSphere APIs     
-        sudo apt install python3-pyvmomi
-
-    Git
-        sudo apt-get install git
-
-
 Create encrypted variables within playbook run the commad belpythonow and past results into variable files
 replace id with variable name eg vsphere, replace password, replace variable with name ef vsphere_password
 when prompted enter the same vault password for all entries in the playbook
