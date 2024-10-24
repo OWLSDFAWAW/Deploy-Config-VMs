@@ -1,0 +1,17 @@
+---
+#
+# check if installation already exists
+#
+- name: check for Connection Server
+  ansible.builtin.win.stat:
+    path: "C:\Program Files\VMware\Vmware View\Server\bin\ws_ConnectionServer.exe"
+  register: connection_info
+
+- name: Install Connection Server
+  win_command: c:\install\VMware-Horizon-Connection-Server-x86_64-8.13.0-10070698069.exe /s /v" /qn FWCHOICE=1 VDM_SERVER_INSTANCE_TYPE=1 VDM_INITIAL_ADMIN_SID="S-1-5-32-544" VDM_SERVER_RECOVERY_PWD="<some_password>" VDM_SERVER_RECOVERY_PWD_REMINDER="<a_reminder>""
+  become: yes
+  become_method: runas
+  become_user: "{{ ansible_user }}"
+  vars:
+    ansible_become_password: "{{ ansible_password }}"
+  when: connection_info.stat.exists == False
