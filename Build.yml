@@ -17,6 +17,6 @@
 - hosts: HCS1
   gather_facts: False
   roles:
-   - deploy_winsrv_core
+   - deploy_winsrv_gui
    - HCS1
    

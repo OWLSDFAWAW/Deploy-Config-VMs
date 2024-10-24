@@ -1,41 +1,46 @@
 ---
-- name: Deploy VM from {{ template_name }}
-  vmware_guest:
+#
+# Create new virtual machine from Windows Core Template
+#
+- name: Create a virtual machine from a core template
+  community.vmware.vmware_guest:
+    validate_certs: false
+    annotation: "{{ VM_notes }}"
     hostname: "{{ vcenter_hostname }}"
     username: "{{ vcenter_username }}"
     password: "{{ vcenter_password }}"
-    validate_certs: no
+    folder: "{{ vcenter_folder }}"
     datacenter: "{{ datacenter_name }}"
+    name: "{{ hostname }}"
     state: poweredon
-    folder:  /{{ datacenter_name }}/vm/{{ folder }}
     template: "{{ template_gui }}"
-    name: "{{ vm_name }}"
-    cluster: "{{ cluster_name }}"
-    datastore: "{{ virtual_machine_datastore }}"
-    networks:
-      - name: VM Network
-        vlan: "{{ vLan_105_ID }}"
-        ip: "{{ IP_105 }}"
-        netmask: "{{ netmask_105 }}"
-        gateway: "{{ gateway_105 }}"
-        type: static
-      - name: VM Network
-        vlan: "{{ vLan_104_ID }}"
-        ip: "{{ IP_104 }}"
-        netmask: "{{ netmask_104 }}"
-        type: static
-    customization:
-      existing_vm: True
-      hostname: "{{ vm_name }}"
-      dns_servers:
-      - "{{ DNS1 }}"
-      - "{{ DNS2 }}"
-    wait_for_ip_address: yes
     hardware:
       memory_mb: "{{ RAM }}"
       num_cpus: "{{ CPU }}"
-      num_cpu_cores_per_socket: 2
-      hotadd_cpu: True
-      hotremove_cpu: True
-      hotadd_memory: True
+      max_connections: 1
+      hotadd_cpu: true
+      hotremove_cpu: true
+      hotadd_memory: false
+      version: latest
+      boot_firmware: "efi"
+    networks:
+      - name: VM Network
+        ip: "{{ IP4 }}"
+        netmask: "{{ netmask }}"
+        gateway: "{{ gateway }}"
+        type: static
+    customization:
+      existing_vm: true
+      hwclockUTC: true
+      timezone: 085
+      orgname: Company name
+      password: Password1234!
+      dns_servers:
+      - "{{ DNS1 }}"
+      - "{{ DNS2 }}"
+      dns_suffix:
+        - "{{ domain }}"
+    wait_for_ip_address: true
   delegate_to: localhost
+  register: deploy
+  vars:
