@@ -1,17 +1,17 @@
 ---
 # Configure the primary domain controller
-- hosts: DC1
-  gather_facts: False
-  roles:
-   - deploy_winsrv_core
-   - DC1
+#- hosts: DC1
+#  gather_facts: False
+#  roles:
+#   - deploy_winsrv_core
+#   - DC1
 
 # Configure the secondary domain controller
-- hosts: DC2
-  gather_facts: False
-  roles:
-   - deploy_winsrv_core
-   - DC2
+#- hosts: DC2
+#  gather_facts: False
+#  roles:
+#   - deploy_winsrv_core
+#   - DC2
 
 # Configure the secondary domain controller
 - hosts: HCS1
