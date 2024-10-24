@@ -18,4 +18,4 @@
   gather_facts: False
   roles:
    - deploy_winsrv_gui
-   - hcs1
+   - HCS1
