@@ -9,6 +9,10 @@
 
 - name: Install Connection Server
   win_command: c:\software\VMware-Horizon-Connection-Server-x86_64-8.13.0-10070698069.exe /s /v" /qn VDM_SERVER_INSTANCE_TYPE=1 VDM_INITIAL_ADMIN_SID=S-1-5-32-544 VDM_SERVER_RECOVERY_PWD=Password1234! VDM_SERVER_RECOVERY_PWD_REMINDER="Password with numbers""
+  become: yes
+  become_method: runas
+  become_user: "{{ domain_admin }}"
+  become_pass: "{{ ansible_password }}"
   when: connection_info.stat.exists == False
 #
 #
