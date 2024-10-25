@@ -14,11 +14,3 @@
   become_user: "{{ domain_admin }}"
   become_pass: "{{ ansible_password }}"
   when: connection_info.stat.exists == False
-#
-#
-#
-  #become: yes
-  #become_method: runas
-  #become_user: "{{ ansible_user }}"
-  #vars:
-  #  ansible_become_password: "{{ ansible_password }}"
