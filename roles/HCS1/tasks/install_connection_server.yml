@@ -3,7 +3,7 @@
 # check if installation already exists
 #
 - name: check for Connection Server
-  ansible.builtin.win.stat:
+  win_stat:
     path: "C:\\Program Files\\VMware\\Vmware View\\Server\\bin\\ws_ConnectionServer.exe"
   register: connection_info
 
