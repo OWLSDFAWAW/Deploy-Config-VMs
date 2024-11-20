@@ -21,7 +21,7 @@
 # copy the HV.Helper files to the appropiate location
 - name: copy vc connection info to localhost
   win_copy:
-    src: 'C:\install\{{ item }}'
+    src: 'C:\software\{{ item }}'
     dest: 'C:\Program Files\WindowsPowerShell\Modules\VMware.HV.Helper\'
     force: no
     remote_src: yes
